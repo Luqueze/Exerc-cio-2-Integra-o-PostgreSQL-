@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try {
-            Connection conexao = DriverManager.getConnection("jdbc:postgresql://seu_host/ti2", "postgres", "8815");
+            Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost/ti2", "postgres", "8815");
             ProdutoDAO produtoDAO = new ProdutoDAO(conexao);
 
             Scanner scanner = new Scanner(System.in);
@@ -81,6 +81,7 @@ public class Main {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Erro ao conectar ao banco de dados.");
         }
     }
 }
